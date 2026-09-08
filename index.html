@@ -612,6 +612,41 @@
       color: var(--gold-soft);
     }
 
+    .ebay-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(14, 123, 255, 0.55);
+      background: linear-gradient(135deg, rgba(14,123,255,0.12), rgba(255, 195, 0, 0.1));
+      color: var(--text);
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ebay-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(14,123,255,0.14);
+    }
+
+    .ebay-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d73ff, #0064d2);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 0.95rem;
+      letter-spacing: -0.08em;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+    }
+
     @media (max-width: 960px) {
       .hero-inner,
       .contact-wrap,
@@ -869,6 +904,11 @@
           <h3>Vieni a trovarci</h3>
           <p>Se stai cercando il costume giusto, un accessorio scenico o un trucco perfetto, siamo qui per aiutarti.</p>
           <a href="https://wa.me/393927861863" target="_blank" rel="noopener" class="btn btn-primary">Scrivici su WhatsApp</a>
+          <br /><br />
+          <a href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noopener" class="ebay-link" aria-label="Visita il negozio eBay di Planet Collection Roma">
+            <span class="ebay-badge">e</span>
+            <span>eBay Store</span>
+          </a>
         </div>
       </div>
     </section>
@@ -881,6 +921,7 @@
         <a href="https://www.instagram.com/planetcollectionroma" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/planetcollectionroma" target="_blank" rel="noopener">Facebook</a>
         <a href="https://www.tiktok.com/@planetcollectionroma" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noopener" aria-label="eBay Store Planet Collection Roma">eBay Store</a>
       </div>
       <span>planetcollectionroma.it</span>
     </div>
