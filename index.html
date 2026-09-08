@@ -638,17 +638,25 @@
       justify-content: center;
       gap: 0;
       line-height: 1;
-      font-weight: 900;
-      font-size: 1.15rem;
+      font-weight: 800;
+      font-size: 1.28rem;
       letter-spacing: -0.12em;
       font-family: Arial, Helvetica, sans-serif;
       transform: translateY(-1px);
+      text-rendering: geometricPrecision;
+      filter: saturate(1.05);
     }
 
     .ebay-logo .red { color: #e53238; }
     .ebay-logo .blue { color: #0064d2; }
     .ebay-logo .yellow { color: #f5af02; }
     .ebay-logo .green { color: #86b817; }
+
+    .ebay-logo .b,
+    .ebay-logo .a,
+    .ebay-logo .y {
+      margin-left: -0.04em;
+    }
 
     @media (max-width: 960px) {
       .hero-inner,
@@ -910,7 +918,7 @@
           <br /><br />
           <a href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noopener" class="ebay-link" aria-label="Visita il negozio eBay di Planet Collection Roma">
             <span class="ebay-logo" aria-label="eBay">
-              <span class="red">e</span><span class="blue">b</span><span class="yellow">a</span><span class="green">y</span>
+              <span class="red">e</span><span class="blue b">b</span><span class="yellow a">a</span><span class="green y">y</span>
             </span>
             <span>Store</span>
           </a>
