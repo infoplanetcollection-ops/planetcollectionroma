@@ -632,20 +632,23 @@
       box-shadow: 0 12px 28px rgba(14,123,255,0.14);
     }
 
-    .ebay-badge {
+    .ebay-logo {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0d73ff, #0064d2);
-      color: #ffffff;
+      gap: 0;
+      line-height: 1;
       font-weight: 900;
-      font-size: 0.95rem;
-      letter-spacing: -0.08em;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+      font-size: 1.15rem;
+      letter-spacing: -0.12em;
+      font-family: Arial, Helvetica, sans-serif;
+      transform: translateY(-1px);
     }
+
+    .ebay-logo .red { color: #e53238; }
+    .ebay-logo .blue { color: #0064d2; }
+    .ebay-logo .yellow { color: #f5af02; }
+    .ebay-logo .green { color: #86b817; }
 
     @media (max-width: 960px) {
       .hero-inner,
@@ -906,8 +909,10 @@
           <a href="https://wa.me/393927861863" target="_blank" rel="noopener" class="btn btn-primary">Scrivici su WhatsApp</a>
           <br /><br />
           <a href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noopener" class="ebay-link" aria-label="Visita il negozio eBay di Planet Collection Roma">
-            <span class="ebay-badge">e</span>
-            <span>eBay Store</span>
+            <span class="ebay-logo" aria-label="eBay">
+              <span class="red">e</span><span class="blue">b</span><span class="yellow">a</span><span class="green">y</span>
+            </span>
+            <span>Store</span>
           </a>
         </div>
       </div>
