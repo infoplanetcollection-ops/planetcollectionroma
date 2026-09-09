@@ -963,43 +963,39 @@
     <title>Planet Collection Roma</title>
     <meta
       name="description"
-      content="Planet Collection Roma - landing page dedicata alla tua brand identity e ai tuoi servizi."
+      content="Planet Collection Roma - costumi, maschere, accessori e trucco professionale per carnevale, Halloween, cosplay e teatro."
     />
     <style>
       :root {
-        --bg: #0b1020;
-        --panel: #121a2b;
-        --panel-soft: #1a2540;
-        --text: #edf3ff;
-        --muted: #b8c6e2;
-        --accent: #7cc7ff;
-        --accent-2: #8ef0c8;
-        --line: rgba(255, 255, 255, 0.12);
+        --bg: #0a0d12;
+        --bg-soft: #121923;
+        --panel: #141d2b;
+        --panel-soft: #1b2739;
+        --text: #f5f7fb;
+        --muted: #b9c4d8;
+        --accent: #f4c75f;
+        --accent-2: #ff6d8c;
+        --accent-3: #7acbff;
+        --line: rgba(255,255,255,0.1);
+        --shadow: 0 24px 60px rgba(0,0,0,0.28);
       }
 
       * { box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #09111d 0%, #0f172a 100%);
+        background:
+          linear-gradient(180deg, rgba(12,14,19,1) 0%, rgba(15,20,30,1) 100%);
         color: var(--text);
         line-height: 1.6;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      button, input, textarea { font: inherit; }
 
       .container {
         width: min(1120px, calc(100% - 32px));
@@ -1009,9 +1005,9 @@
       header {
         position: sticky;
         top: 0;
-        z-index: 10;
-        background: rgba(11, 16, 32, 0.9);
-        backdrop-filter: blur(8px);
+        z-index: 20;
+        background: rgba(10,13,18,0.82);
+        backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--line);
       }
 
@@ -1020,98 +1016,175 @@
         align-items: center;
         justify-content: space-between;
         min-height: 72px;
+        gap: 18px;
       }
 
       .brand {
-        font-size: 1.15rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand-text {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.04);
+        font-size: clamp(1.2rem, 2vw, 2.1rem);
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        line-height: 1.1;
+        white-space: nowrap;
+        color: rgba(245,247,251,0.94);
+      }
+
+      .brand-logo {
+        width: 68px;
+        height: 68px;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.96);
+        padding: 2px;
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
       }
 
       .nav-links {
         display: flex;
         gap: 24px;
+        align-items: center;
         color: var(--muted);
-        font-size: 0.96rem;
+        font-size: 0.95rem;
       }
 
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      .nav-links a:hover { color: var(--text); }
 
       .cta {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #061321;
-        padding: 12px 22px;
+        color: #111827;
+        padding: 13px 22px;
+        border-radius: 999px;
+        font-weight: 800;
+        box-shadow: 0 16px 32px rgba(244,199,95,0.3);
+      }
+
+      .ebay-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 14px 18px;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 18px;
+        background: linear-gradient(135deg, #f5f7fb 0%, #e9eef9 100%);
+        color: #111827;
+        box-shadow: 0 18px 30px rgba(0,0,0,0.22);
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .ebay-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 20px 34px rgba(0,0,0,0.26);
+      }
+
+      .ebay-logo {
+        width: 34px;
+        height: 34px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #f4c75f, #ff9d2e);
+        color: #0d1520;
+        font-size: 0.94rem;
+        font-weight: 900;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+      }
+
+      .ebay-word {
+        color: #e53238;
+      }
+
+      .ebay-word .blue { color: #0064d2; }
+      .ebay-word .yellow { color: #f5af02; }
+      .ebay-word .green { color: #86b817; }
+
+      .secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        color: var(--text);
+        padding: 13px 22px;
         border-radius: 999px;
         font-weight: 700;
-        box-shadow: 0 10px 30px rgba(124, 199, 255, 0.35);
       }
 
       .hero {
-        padding: 80px 0 60px;
+        padding: 90px 0 70px;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 40px;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 42px;
         align-items: center;
       }
 
       .eyebrow {
         display: inline-block;
-        padding: 8px 12px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--accent-2);
-        font-size: 0.8rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
         margin-bottom: 18px;
+        padding: 8px 14px;
+        border: 1px solid rgba(244,199,95,0.4);
+        border-radius: 999px;
+        background: rgba(244,199,95,0.08);
+        color: var(--accent);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
 
       h1 {
-        font-size: clamp(2.6rem, 5vw, 5rem);
-        line-height: 1.05;
         margin: 0 0 18px;
+        font-size: clamp(2.8rem, 4.7vw, 5rem);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
       }
 
       .lead {
+        max-width: 620px;
         font-size: 1.08rem;
         color: var(--muted);
-        max-width: 620px;
         margin-bottom: 28px;
       }
 
       .hero-actions {
         display: flex;
-        gap: 16px;
         flex-wrap: wrap;
-        margin-bottom: 26px;
-      }
-
-      .secondary {
-        display: inline-block;
-        border: 1px solid var(--line);
-        color: var(--text);
-        background: rgba(255,255,255,0.02);
-        padding: 12px 22px;
-        border-radius: 999px;
-        font-weight: 600;
+        gap: 16px;
+        justify-content: flex-start;
+        margin-bottom: 28px;
       }
 
       .stats {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 28px 36px;
       }
 
       .stat strong {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        margin-bottom: 4px;
       }
 
       .stat span {
@@ -1119,66 +1192,58 @@
         font-size: 0.9rem;
       }
 
-      .card {
-        background: rgba(18, 26, 43, 0.88);
+      .hero-card {
+        background: linear-gradient(180deg, rgba(20,28,38,0.96), rgba(12,18,26,0.96));
         border: 1px solid var(--line);
+        border-radius: 30px;
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .hero-card img {
+        width: 100%;
+        height: 500px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center top;
         border-radius: 24px;
-        padding: 28px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--line);
+        margin-bottom: 18px;
       }
 
-      .mockup {
-        min-height: 500px;
-        position: relative;
+      .mini-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mini-item {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-      }
-
-      .mockup-screen {
-        width: min(100%, 420px);
-        aspect-ratio: 0.82;
-        background: linear-gradient(160deg, #1f2d4a 0%, #111a2d 100%);
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.02);
         border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 24px;
-        position: relative;
+        color: var(--muted);
       }
 
-      .mockup-screen::before {
-        content: "";
-        position: absolute;
-        inset: 18px auto 18px 18px;
-        width: 16px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      }
-
-      .mini-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 16px;
-        margin-bottom: 16px;
-        margin-left: 26px;
-      }
-
-      .mini-card strong {
-        display: block;
-        margin-bottom: 6px;
+      .mini-item strong {
+        color: var(--text);
       }
 
       section {
-        padding: 52px 0;
+        padding: 60px 0;
       }
 
       .section-heading {
-        margin-bottom: 24px;
+        margin-bottom: 26px;
       }
 
       .section-heading h2 {
         margin: 0 0 10px;
         font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.05em;
       }
 
       .section-heading p {
@@ -1186,48 +1251,206 @@
         color: var(--muted);
       }
 
-      .features {
+      .reparti-grid,
+      .feature-grid,
+      .review-grid,
+      .contact-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 22px;
       }
 
-      .feature {
-        padding: 26px;
+      .reparti-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .reparto {
+        padding: 24px;
+        background: rgba(20,29,43,0.72);
         border: 1px solid var(--line);
-        border-radius: 20px;
-        background: rgba(17, 24, 39, 0.6);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
       }
 
-      .feature .icon {
-        font-size: 1.8rem;
-        margin-bottom: 16px;
-      }
-
-      .feature h3 {
-        margin: 0 0 10px;
-      }
-
-      .feature p {
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .about {
+      .reparto .icon {
+        width: 52px;
+        height: 52px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        align-items: center;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(244,199,95,0.18), rgba(122,203,255,0.12));
+        font-size: 1.5rem;
+        margin-bottom: 12px;
       }
 
-      .about-box {
+      .reparto h3 {
+        margin: 0 0 10px;
+        font-size: 1.35rem;
+      }
+
+      .reparto p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .scroller {
+        position: relative;
+        overflow: hidden;
+        padding: 8px 0 2px;
+      }
+
+      .scroller-track {
+        display: flex;
+        align-items: stretch;
+        gap: 18px;
+        width: max-content;
+        animation: marquee 42s linear infinite;
+      }
+
+      .scroller:hover .scroller-track {
+        animation-play-state: paused;
+      }
+
+      .scroller-item {
+        flex: 0 0 260px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(20,29,43,0.72);
+        box-shadow: var(--shadow);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .scroller-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 26px 44px rgba(0,0,0,0.24);
+      }
+
+      .scroller-item img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+      }
+
+      .costume-scroller .scroller-item img {
+        object-position: center 25%;
+        height: 320px;
+      }
+
+      .trucco-scroller .scroller-item img {
+        height: 300px;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .scroller-item .caption {
+        padding: 12px 14px 14px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      .product {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(20,29,43,0.72);
+        box-shadow: var(--shadow);
+      }
+
+      .product img {
+        width: 100%;
+        aspect-ratio: 5 / 6;
+        display: block;
+        object-fit: cover;
+        object-position: center 16%;
+      }
+
+      .product-body {
+        padding: 16px;
+      }
+
+      .product-body h3 {
+        margin: 0 0 8px;
+        font-size: 1.12rem;
+      }
+
+      .product-body p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .price {
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      .review-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .review {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(20,29,43,0.7);
+      }
+
+      .review p {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .review strong {
+        display: block;
+      }
+
+      .cta-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        padding: 36px;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: linear-gradient(135deg, rgba(244,199,95,0.12), rgba(122,203,255,0.08));
+        box-shadow: var(--shadow);
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+
+      .contact-card {
         padding: 28px;
         border: 1px solid var(--line);
         border-radius: 24px;
-        background: rgba(15, 23, 42, 0.7);
+        background: rgba(20,29,43,0.7);
       }
 
-      ul.checklist {
+      .contact-card p,
+      .contact-card li {
+        color: var(--muted);
+      }
+
+      .contact-list {
         list-style: none;
         padding: 0;
         margin: 18px 0 0;
@@ -1235,47 +1458,149 @@
         gap: 12px;
       }
 
-      ul.checklist li {
-        color: var(--muted);
-        position: relative;
-        padding-left: 28px;
-      }
-
-      ul.checklist li::before {
-        content: "✓";
-        color: var(--accent-2);
-        position: absolute;
-        left: 0;
-      }
-
-      .cta-banner {
-        padding: 36px;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        background: linear-gradient(135deg, rgba(124,199,255,0.12), rgba(142,240,200,0.08));
-        display: flex;
+      .social-link {
+        display: inline-flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
+        gap: 10px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .social-link:hover {
+        color: var(--accent);
+      }
+
+      .maps-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .maps-link:hover {
+        transform: translateY(-1px);
+        border-color: rgba(244,199,95,0.7);
+        color: var(--accent);
+      }
+
+      .maps-pin {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #fbbc04, #ea4335);
+        color: #171717;
+        font-size: 0.95rem;
+      }
+
+      .social-icon {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+      }
+
+      .social-icon svg {
+        width: 14px;
+        height: 14px;
+        display: block;
+      }
+
+      .social-icon.instagram {
+        background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      }
+
+      .social-icon.tiktok {
+        background: linear-gradient(135deg, #010101, #1a1a1a);
+      }
+
+      .social-icon.facebook {
+        background: #1877f2;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.02);
+        color: var(--text);
+        padding: 14px 16px;
+      }
+
+      .contact-form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 30;
+        width: 60px;
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.8rem;
+        box-shadow: 0 20px 40px rgba(37,211,102,0.35);
       }
 
       footer {
-        padding: 28px 0 48px;
+        padding: 28px 0 50px;
         color: var(--muted);
         border-top: 1px solid var(--line);
       }
 
-      @media (max-width: 860px) {
+      @media (max-width: 900px) {
         .hero-grid,
-        .features,
-        .about {
+        .reparti-grid,
+        .feature-grid,
+        .review-grid,
+        .contact-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .reparti-grid,
+        .feature-grid,
+        .review-grid,
+        .contact-grid {
           grid-template-columns: 1fr;
         }
 
         .nav {
           flex-wrap: wrap;
-          gap: 12px;
+          justify-content: center;
           padding: 12px 0;
         }
 
@@ -1290,13 +1615,17 @@
   <body>
     <header>
       <div class="container nav">
-        <a href="#top" class="brand">Planet Collection Roma</a>
+        <a href="#top" class="brand">
+          <img class="brand-logo" src="assets/logo-planet-collection-roma.png" alt="Planet Collection Roma logo" />
+          <span class="brand-text">Planet Collection Roma</span>
+        </a>
         <nav class="nav-links" aria-label="Navigazione principale">
-          <a href="#servizi">Servizi</a>
-          <a href="#chi-siamo">Chi siamo</a>
+          <a href="#costumi">Reparti</a>
+          <a href="#in-evidenza">In evidenza</a>
+          <a href="#recensioni">Recensioni</a>
           <a href="#contatti">Contatti</a>
         </nav>
-        <a class="cta" href="#contatti">Prenota ora</a>
+        <a class="cta" href="#contatti">Vieni a trovarci</a>
       </div>
     </header>
 
@@ -1304,105 +1633,388 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="eyebrow">Brand & design</span>
-            <h1>Rendi il tuo brand visibile e memorabile.</h1>
+            <span class="eyebrow">Planet Collection Roma</span>
+            <h1>Ogni personaggio merita il suo look.</h1>
             <p class="lead">
-              Planet Collection Roma crea esperienze digitali moderne per aziende e brand che
-              vogliono distinguersi con un’identità forte, un sito elegante e una presenza online efficace.
+              Costumi, maschere, accessori e trucco professionale per carnevale, Halloween,
+              cosplay, teatro e scene live. Una selezione curata per trasformare ogni idea in
+              un personaggio memorabile.
             </p>
             <div class="hero-actions">
-              <a class="cta" href="#contatti">Contattaci</a>
-              <a class="secondary" href="#servizi">Scopri i servizi</a>
+              <a class="cta" href="#costumi">Scopri i reparti</a>
+              <a class="secondary" href="#contatti">Contatta ora</a>
             </div>
             <div class="stats">
               <div class="stat">
-                <strong>+200</strong>
-                <span>Progetti</span>
+                <strong>20k+</strong>
+                <span>Clienti</span>
               </div>
               <div class="stat">
-                <strong>100%</strong>
-                <span>Personalizzato</span>
+                <strong>4.9/5</strong>
+                <span>Valutazione</span>
               </div>
               <div class="stat">
-                <strong>24/7</strong>
-                <span>Supporto</span>
+                <strong>2gg</strong>
+                <span>Consegna</span>
               </div>
             </div>
           </div>
 
-          <div class="card mockup" aria-label="Mockup del sito">
-            <div class="mockup-screen">
-              <div class="mini-card">
-                <strong>Brand Strategy</strong>
-                Posizionamento e identità chiara
-              </div>
-              <div class="mini-card">
-                <strong>Web Design</strong>
-                Layout moderni e conversion-oriented
-              </div>
-              <div class="mini-card">
-                <strong>SEO & Growth</strong>
-                Visibilità e contatti in crescita
-              </div>
+          <div class="hero-card" aria-label="Immagine del negozio">
+            <img src="https://planetcollectionroma.it/Screenshot_20260407-084707_Foto.png" alt="Negozio Planet Collection Roma" />
+            <div class="mini-list">
+              <a class="ebay-cta" href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noreferrer">
+                <span class="ebay-logo">e</span>
+                <span>Visita il mio <span class="ebay-word"><span class="red">e</span><span class="blue">B</span><span class="yellow">a</span><span class="green">y</span></span> store</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="servizi">
+      <section id="reparti">
         <div class="container">
           <div class="section-heading">
-            <h2>Servizi pensati per crescere.</h2>
-            <p>Soluzioni digitali che uniscono estetica, strategia e risultati.</p>
+            <h2>Il negozio dove il costume diventa identità.</h2>
+            <p>Materiali da scena, dettagli di scena, trucco teatrale e accessori per trasformare ogni look in qualcosa di unico.</p>
           </div>
 
-          <div class="features">
-            <article class="feature">
-              <div class="icon">✦</div>
-              <h3>Brand identity</h3>
-              <p>Creiamo un’identità visiva coerente e riconoscibile per posizionare il tuo brand in modo efficace.</p>
+          <div class="reparti-grid">
+            <article class="reparto">
+              <div class="icon">🎭</div>
+              <h3>Costumi</h3>
+              <p>Look completi per carnevale, Halloween e cosplay, studiati per essere perfetti, scenici e memorabili.</p>
             </article>
 
-            <article class="feature">
-              <div class="icon">▣</div>
-              <h3>Landing page</h3>
-              <p>Progettiamo pagine di vendita efficaci, veloci e ottimizzate per convertire visitatori in clienti.</p>
+            <article class="reparto">
+              <div class="icon">🎪</div>
+              <h3>Maschere</h3>
+              <p>Maschere artistiche e sceniche, curate nei dettagli per un risultato forte e impeccabile.</p>
             </article>
 
-            <article class="feature">
-              <div class="icon">⚡</div>
-              <h3>Performance</h3>
-              <p>Focus su velocità, usabilità e miglioramento dell’esperienza utente su desktop e mobile.</p>
+            <article class="reparto">
+              <div class="icon">✨</div>
+              <h3>Trucco</h3>
+              <p>Prodotti professionali, colori intensi e effetti speciali per chi vuole una trasformazione completa.</p>
+            </article>
+
+            <article class="reparto">
+              <div class="icon">💇</div>
+              <h3>Parrucche e barbe</h3>
+              <p>Soluzioni sceniche e realistiche per trasformare il volto e completare ogni personaggio con autenticità.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="chi-siamo">
-        <div class="container about">
-          <div class="about-box">
-            <div class="section-heading">
-              <h2>Un partner creativo per la tua presenza online.</h2>
-            </div>
-            <p>
-              Siamo un team orientato alla qualità, con l’obiettivo di aiutare brand e aziende a trasformare
-              la loro presenza online in un vantaggio competitivo concreto.
-            </p>
-            <ul class="checklist">
-              <li>Approccio strategico e personalizzato</li>
-              <li>Design moderno e conversion-focused</li>
-              <li>Supporto per la crescita digitale</li>
-            </ul>
+      <section id="in-evidenza">
+        <div class="container">
+          <div class="section-heading">
+            <h2>In evidenza</h2>
+            <p>Scopri i prodotti più richiesti per trasformare ogni evento in un’esperienza da protagonista.</p>
           </div>
 
-          <div class="about-box">
-            <div class="section-heading">
-              <h2>Il nostro metodo</h2>
+          <div class="feature-grid">
+            <article class="product">
+              <img src="assets/zoro.png" alt="Cosplay Zoro" />
+              <div class="product-body">
+                <h3>Cosplay</h3>
+                <p>Look completi e curati per spettacoli, eventi a tema e interpretazioni da protagonista.</p>
+                <div class="price-row"><span class="price">a partire da €19,90</span><a class="secondary" href="#contatti">Richiedi</a></div>
+              </div>
+            </article>
+
+            <article class="product">
+              <img src="assets/penny.webp" alt="Maschere professionali Penny" />
+              <div class="product-body">
+                <h3>Maschere professionali</h3>
+                <p>Maschere sceniche e dettagliate per un risultato forte, originale e memorabile.</p>
+                <div class="price-row"><span class="price">a partire da €3</span><a class="secondary" href="#contatti">Richiedi</a></div>
+              </div>
+            </article>
+
+            <article class="product">
+              <img src="assets/lenti.webp" alt="Lenti a contatto colorate" />
+              <div class="product-body">
+                <h3>Lenti a contatto colorate settimanali</h3>
+                <p>Per trasformare lo sguardo e rendere ogni personaggio ancora più riconoscibile.</p>
+                <div class="price-row"><span class="price">€12</span><a class="secondary" href="#contatti">Richiedi</a></div>
+              </div>
+            </article>
+
+            <article class="product">
+              <img src="assets/truc.webp" alt="Trucco professionale e truccabimbi" />
+              <div class="product-body">
+                <h3>Trucco professionale e truccabimbi</h3>
+                <p>Colori intensi, effetti speciali e prodotti pensati per trasformazioni complete.</p>
+                <div class="price-row"><span class="price">a partire da €2</span><a class="secondary" href="#contatti">Richiedi</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="costumi">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Costumi</h2>
+            <p>Una selezione delle nostre proposte più sceniche e originali.</p>
+          </div>
+
+          <div class="scroller costume-scroller" aria-label="Galleria costumi in movimento">
+            <div class="scroller-track">
+              <article class="scroller-item"><img src="assets/costumi/costume_01.png" alt="Costume 1" /><div class="caption">Look elegante</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_02.png" alt="Costume 2" /><div class="caption">Tema scenico</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_03.png" alt="Costume 3" /><div class="caption">Originale</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_04.png" alt="Costume 4" /><div class="caption">Eleganza</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_05.png" alt="Costume 5" /><div class="caption">Dress code</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_06.png" alt="Costume 6" /><div class="caption">Dettaglio</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_07.png" alt="Costume 7" /><div class="caption">Mood creativo</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_08.png" alt="Costume 8" /><div class="caption">Scena</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_09.png" alt="Costume 9" /><div class="caption">Look iconico</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_10.png" alt="Costume 10" /><div class="caption">Evento</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_11.png" alt="Costume 11" /><div class="caption">Carattere</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_12.png" alt="Costume 12" /><div class="caption">Originalità</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_13.png" alt="Costume 13" /><div class="caption">Stile</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_14.png" alt="Costume 14" /><div class="caption">Trucco & accessori</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_15.jpg" alt="Costume 15" /><div class="caption">Collezione</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_16.jpg" alt="Costume 16" /><div class="caption">Special</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_01.png" alt="Costume 1 doppia" /><div class="caption">Look elegante</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_02.png" alt="Costume 2 doppia" /><div class="caption">Tema scenico</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_03.png" alt="Costume 3 doppia" /><div class="caption">Originale</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_04.png" alt="Costume 4 doppia" /><div class="caption">Eleganza</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_05.png" alt="Costume 5 doppia" /><div class="caption">Dress code</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_06.png" alt="Costume 6 doppia" /><div class="caption">Dettaglio</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_07.png" alt="Costume 7 doppia" /><div class="caption">Mood creativo</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_08.png" alt="Costume 8 doppia" /><div class="caption">Scena</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_09.png" alt="Costume 9 doppia" /><div class="caption">Look iconico</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_10.png" alt="Costume 10 doppia" /><div class="caption">Evento</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_11.png" alt="Costume 11 doppia" /><div class="caption">Carattere</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_12.png" alt="Costume 12 doppia" /><div class="caption">Originalità</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_13.png" alt="Costume 13 doppia" /><div class="caption">Stile</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_14.png" alt="Costume 14 doppia" /><div class="caption">Trucco & accessori</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_15.jpg" alt="Costume 15 doppia" /><div class="caption">Collezione</div></article>
+              <article class="scroller-item"><img src="assets/costumi/costume_16.jpg" alt="Costume 16 doppia" /><div class="caption">Special</div></article>
             </div>
-            <p>
-              Analizziamo il tuo brand, definiamo la proposta di valore e realizziamo una struttura digitale
-              che sia facile da comprendere, piacevole da usare e pronta a generare opportunità.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="maschere">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Maschere</h2>
+            <p>Una selezione delle maschere più sceniche, dettagliate e originali.</p>
+          </div>
+
+          <div class="scroller" aria-label="Galleria maschere in movimento">
+            <div class="scroller-track">
+              <article class="scroller-item"><img src="assets/penny.webp" alt="Penny maschera" /><div class="caption">Penny</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_01.jpg" alt="Maschera 1" /><div class="caption">Maschera 1</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_02.jpg" alt="Maschera 2" /><div class="caption">Maschera 2</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_03.jpg" alt="Maschera 3" /><div class="caption">Maschera 3</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_04.jpg" alt="Maschera 4" /><div class="caption">Maschera 4</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_05.jpg" alt="Maschera 5" /><div class="caption">Maschera 5</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_06.jpg" alt="Maschera 6" /><div class="caption">Maschera 6</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_07.jpg" alt="Maschera 7" /><div class="caption">Maschera 7</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_08.jpg" alt="Maschera 8" /><div class="caption">Maschera 8</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_09.jpg" alt="Maschera 9" /><div class="caption">Maschera 9</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_10.jpg" alt="Maschera 10" /><div class="caption">Maschera 10</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_11.jpg" alt="Maschera 11" /><div class="caption">Maschera 11</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_12.jpg" alt="Maschera 12" /><div class="caption">Maschera 12</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_13.jpg" alt="Maschera 13" /><div class="caption">Maschera 13</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_14.jpg" alt="Maschera 14" /><div class="caption">Maschera 14</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_15.jpg" alt="Maschera 15" /><div class="caption">Maschera 15</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_16.jpg" alt="Maschera 16" /><div class="caption">Maschera 16</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_17.jpg" alt="Maschera 17" /><div class="caption">Maschera 17</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_18.jpg" alt="Maschera 18" /><div class="caption">Maschera 18</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_19.jpg" alt="Maschera 19" /><div class="caption">Maschera 19</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_01.jpg" alt="Maschera 1 doppia" /><div class="caption">Maschera 1</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_02.jpg" alt="Maschera 2 doppia" /><div class="caption">Maschera 2</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_03.jpg" alt="Maschera 3 doppia" /><div class="caption">Maschera 3</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_04.jpg" alt="Maschera 4 doppia" /><div class="caption">Maschera 4</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_05.jpg" alt="Maschera 5 doppia" /><div class="caption">Maschera 5</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_06.jpg" alt="Maschera 6 doppia" /><div class="caption">Maschera 6</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_07.jpg" alt="Maschera 7 doppia" /><div class="caption">Maschera 7</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_08.jpg" alt="Maschera 8 doppia" /><div class="caption">Maschera 8</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_09.jpg" alt="Maschera 9 doppia" /><div class="caption">Maschera 9</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_10.jpg" alt="Maschera 10 doppia" /><div class="caption">Maschera 10</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_11.jpg" alt="Maschera 11 doppia" /><div class="caption">Maschera 11</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_12.jpg" alt="Maschera 12 doppia" /><div class="caption">Maschera 12</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_13.jpg" alt="Maschera 13 doppia" /><div class="caption">Maschera 13</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_14.jpg" alt="Maschera 14 doppia" /><div class="caption">Maschera 14</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_15.jpg" alt="Maschera 15 doppia" /><div class="caption">Maschera 15</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_16.jpg" alt="Maschera 16 doppia" /><div class="caption">Maschera 16</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_17.jpg" alt="Maschera 17 doppia" /><div class="caption">Maschera 17</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_18.jpg" alt="Maschera 18 doppia" /><div class="caption">Maschera 18</div></article>
+              <article class="scroller-item"><img src="assets/maschere/mask_19.jpg" alt="Maschera 19 doppia" /><div class="caption">Maschera 19</div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="trucco">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Trucco</h2>
+            <p>Una galleria completa di colori, dettagli e realizzazioni da scena per look impeccabili.</p>
+          </div>
+
+          <div class="scroller trucco-scroller" aria-label="Galleria trucco in movimento">
+            <div class="scroller-track">
+              <article class="scroller-item"><img src="assets/trucco/Screenshot_20260612-232443_Samsung Browser~2.jpg" alt="Trucco 1" /><div class="caption">Trucco 1</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-3.webp" alt="Trucco 2" /><div class="caption">Trucco 2</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-8.webp" alt="Trucco 3" /><div class="caption">Trucco 3</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-9.webp" alt="Trucco 4" /><div class="caption">Trucco 4</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-10.webp" alt="Trucco 5" /><div class="caption">Trucco 5</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-11.webp" alt="Trucco 6" /><div class="caption">Trucco 6</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-12.webp" alt="Trucco 7" /><div class="caption">Trucco 7</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-13.webp" alt="Trucco 8" /><div class="caption">Trucco 8</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-14.webp" alt="Trucco 9" /><div class="caption">Trucco 9</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-15.webp" alt="Trucco 10" /><div class="caption">Trucco 10</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-16.webp" alt="Trucco 11" /><div class="caption">Trucco 11</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-17.webp" alt="Trucco 12" /><div class="caption">Trucco 12</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-18.webp" alt="Trucco 13" /><div class="caption">Trucco 13</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-19.webp" alt="Trucco 14" /><div class="caption">Trucco 14</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-20.webp" alt="Trucco 15" /><div class="caption">Trucco 15</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-21.webp" alt="Trucco 16" /><div class="caption">Trucco 16</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-22.webp" alt="Trucco 17" /><div class="caption">Trucco 17</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-23.webp" alt="Trucco 18" /><div class="caption">Trucco 18</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-24.webp" alt="Trucco 19" /><div class="caption">Trucco 19</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-25.webp" alt="Trucco 20" /><div class="caption">Trucco 20</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-26.webp" alt="Trucco 21" /><div class="caption">Trucco 21</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-27.webp" alt="Trucco 22" /><div class="caption">Trucco 22</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-28.webp" alt="Trucco 23" /><div class="caption">Trucco 23</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-29.webp" alt="Trucco 24" /><div class="caption">Trucco 24</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-30.webp" alt="Trucco 25" /><div class="caption">Trucco 25</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-31.webp" alt="Trucco 26" /><div class="caption">Trucco 26</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-32.webp" alt="Trucco 27" /><div class="caption">Trucco 27</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-1.webp" alt="Trucco 28" /><div class="caption">Trucco 28</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-2.webp" alt="Trucco 29" /><div class="caption">Trucco 29</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-3.webp" alt="Trucco 30" /><div class="caption">Trucco 30</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500.webp" alt="Trucco 31" /><div class="caption">Trucco 31</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (1).webp" alt="Trucco 32" /><div class="caption">Trucco 32</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (2).webp" alt="Trucco 33" /><div class="caption">Trucco 33</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (3).webp" alt="Trucco 34" /><div class="caption">Trucco 34</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (4).webp" alt="Trucco 35" /><div class="caption">Trucco 35</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (5).webp" alt="Trucco 36" /><div class="caption">Trucco 36</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (6).webp" alt="Trucco 37" /><div class="caption">Trucco 37</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (7).webp" alt="Trucco 38" /><div class="caption">Trucco 38</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (8).webp" alt="Trucco 39" /><div class="caption">Trucco 39</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (24).webp" alt="Trucco 40" /><div class="caption">Trucco 40</div></article>
+              <article class="scroller-item"><img src="assets/trucco/Screenshot_20260612-232443_Samsung Browser~2.jpg" alt="Trucco 41" /><div class="caption">Trucco 41</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-3.webp" alt="Trucco 42" /><div class="caption">Trucco 42</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-8.webp" alt="Trucco 43" /><div class="caption">Trucco 43</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-9.webp" alt="Trucco 44" /><div class="caption">Trucco 44</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-10.webp" alt="Trucco 45" /><div class="caption">Trucco 45</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-11.webp" alt="Trucco 46" /><div class="caption">Trucco 46</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-12.webp" alt="Trucco 47" /><div class="caption">Trucco 47</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-13.webp" alt="Trucco 48" /><div class="caption">Trucco 48</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-14.webp" alt="Trucco 49" /><div class="caption">Trucco 49</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-15.webp" alt="Trucco 50" /><div class="caption">Trucco 50</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-16.webp" alt="Trucco 51" /><div class="caption">Trucco 51</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-17.webp" alt="Trucco 52" /><div class="caption">Trucco 52</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-18.webp" alt="Trucco 53" /><div class="caption">Trucco 53</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-19.webp" alt="Trucco 54" /><div class="caption">Trucco 54</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-20.webp" alt="Trucco 55" /><div class="caption">Trucco 55</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-21.webp" alt="Trucco 56" /><div class="caption">Trucco 56</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-22.webp" alt="Trucco 57" /><div class="caption">Trucco 57</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-23.webp" alt="Trucco 58" /><div class="caption">Trucco 58</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-24.webp" alt="Trucco 59" /><div class="caption">Trucco 59</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-25.webp" alt="Trucco 60" /><div class="caption">Trucco 60</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-26.webp" alt="Trucco 61" /><div class="caption">Trucco 61</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-27.webp" alt="Trucco 62" /><div class="caption">Trucco 62</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-28.webp" alt="Trucco 63" /><div class="caption">Trucco 63</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-29.webp" alt="Trucco 64" /><div class="caption">Trucco 64</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-30.webp" alt="Trucco 65" /><div class="caption">Trucco 65</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-31.webp" alt="Trucco 66" /><div class="caption">Trucco 66</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l1200-32.webp" alt="Trucco 67" /><div class="caption">Trucco 67</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-1.webp" alt="Trucco 68" /><div class="caption">Trucco 68</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-2.webp" alt="Trucco 69" /><div class="caption">Trucco 69</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l400-3.webp" alt="Trucco 70" /><div class="caption">Trucco 70</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500.webp" alt="Trucco 71" /><div class="caption">Trucco 71</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (1).webp" alt="Trucco 72" /><div class="caption">Trucco 72</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (2).webp" alt="Trucco 73" /><div class="caption">Trucco 73</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (3).webp" alt="Trucco 74" /><div class="caption">Trucco 74</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (4).webp" alt="Trucco 75" /><div class="caption">Trucco 75</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (5).webp" alt="Trucco 76" /><div class="caption">Trucco 76</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (6).webp" alt="Trucco 77" /><div class="caption">Trucco 77</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (7).webp" alt="Trucco 78" /><div class="caption">Trucco 78</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (8).webp" alt="Trucco 79" /><div class="caption">Trucco 79</div></article>
+              <article class="scroller-item"><img src="assets/trucco/s-l500 (24).webp" alt="Trucco 80" /><div class="caption">Trucco 80</div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="parrucche-e-barbe">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Parrucche e barbe</h2>
+            <p>Completa ogni trasformazione con look realistici, scenici e pronti per essere indossati con sicurezza.</p>
+          </div>
+
+          <div class="scroller" aria-label="Galleria parrucche e barbe in movimento">
+            <div class="scroller-track">
+              <article class="scroller-item"><img src="assets/parrucche/s-l1600.webp" alt="Parrucca 1" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l1600 (1).webp" alt="Parrucca 2" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500.webp" alt="Parrucca 3" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (1).webp" alt="Parrucca 4" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (2).webp" alt="Parrucca 5" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (3).webp" alt="Parrucca 6" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (4).webp" alt="Parrucca 7" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (5).webp" alt="Parrucca 8" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (6).webp" alt="Parrucca 9" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (7).webp" alt="Parrucca 10" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (8).webp" alt="Parrucca 11" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (9).webp" alt="Parrucca 12" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (10).webp" alt="Parrucca 13" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (11).webp" alt="Parrucca 14" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (12).webp" alt="Parrucca 15" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (13).webp" alt="Parrucca 16" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (14).webp" alt="Parrucca 17" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (15).webp" alt="Parrucca 18" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (16).webp" alt="Parrucca 19" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (17).webp" alt="Parrucca 20" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (18).webp" alt="Parrucca 21" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (19).webp" alt="Parrucca 22" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (20).webp" alt="Parrucca 23" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (21).webp" alt="Parrucca 24" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (22).webp" alt="Parrucca 25" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (23).webp" alt="Parrucca 26" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l1600.webp" alt="Parrucca 27" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l1600 (1).webp" alt="Parrucca 28" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500.webp" alt="Parrucca 29" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (1).webp" alt="Parrucca 30" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (2).webp" alt="Parrucca 31" /><div class="caption">Parrucca</div></article>
+              <article class="scroller-item"><img src="assets/parrucche/s-l500 (3).webp" alt="Parrucca 32" /><div class="caption">Parrucca</div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recensioni">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Le opinioni dei nostri clienti</h2>
+            <p>Piccoli dettagli, grandi trasformazioni: ecco cosa dicono chi ci ha scelto.</p>
+          </div>
+
+          <div class="review-grid">
+            <article class="review">
+              <p>“Sito curato, assistenza impeccabile e prodotti davvero belli. Ho trovato il costume perfetto per il mio evento.”</p>
+              <strong>Maria R.</strong>
+            </article>
+
+            <article class="review">
+              <p>“Atmosfera speciale, staff disponibile e scelta davvero interessante. Perfetto per trucco e accessori da scena.”</p>
+              <strong>Luca T.</strong>
+            </article>
+
+            <article class="review">
+              <p>“Un negozio che sa davvero trasformare un’idea in un look completo. Da consigliare assolutamente.”</p>
+              <strong>Sofia M.</strong>
+            </article>
           </div>
         </div>
       </section>
@@ -1411,19 +2023,99 @@
         <div class="container">
           <div class="cta-banner">
             <div>
-              <h2 style="margin: 0 0 8px;">Pronto a dare una nuova identità al tuo brand?</h2>
-              <p style="margin: 0; color: var(--muted);">Parliamone e troviamo la soluzione giusta per te.</p>
+              <h2 style="margin: 0 0 8px;">Vieni a trovarci</h2>
+              <p style="margin: 0; color: var(--muted);">Se stai cercando il costume giusto, un accessorio scenico o un trucco perfetto, siamo qui per aiutarti.</p>
             </div>
-            <a class="cta" href="mailto:info@planetcollectionroma.it">Contatta oggi</a>
+            <a class="cta" href="https://wa.me/393927861863" target="_blank" rel="noreferrer">Scrivici su WhatsApp</a>
+          </div>
+
+          <div class="contact-grid" style="margin-top: 24px;">
+            <div class="contact-card">
+              <div class="section-heading" style="margin-bottom: 0;">
+                <h2 style="font-size: clamp(1.9rem, 2.5vw, 2.5rem);">Planet Collection Roma</h2>
+              </div>
+              <ul class="contact-list">
+                <li>Indirizzo: Via Antonio Pacinotti, 25 — Roma</li>
+                <li>Facile da raggiungere: linea ATAC 96 con fermata davanti al negozio e linea 170 con fermata a Piazza della Radio.</li>
+                <li>
+                  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Via+Antonio+Pacinotti+25+Roma" target="_blank" rel="noreferrer">
+                    <span class="maps-pin" aria-label="Google Maps">📍</span>
+                    Apri indicazioni su Google Maps
+                  </a>
+                </li>
+                <li>Telefono: <a href="tel:+390689836622">06 8983 6622</a></li>
+                <li>WhatsApp: <a href="https://wa.me/393927861863" target="_blank" rel="noreferrer">392 786 1863</a></li>
+                <li>Email: <a href="mailto:info.planetcollection@gmail.com">info.planetcollection@gmail.com</a></li>
+                <li>eBay: <a href="https://www.ebay.it/str/planetcollectionroma" target="_blank" rel="noreferrer">Planet Collection Roma</a></li>
+                <li>
+                  <a class="social-link" href="https://www.instagram.com/planetcollectionroma/" target="_blank" rel="noreferrer">
+                    <span class="social-icon instagram" aria-label="Instagram logo">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+                    </span>
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a class="social-link" href="https://www.tiktok.com/@planetcollectionroma" target="_blank" rel="noreferrer">
+                    <span class="social-icon tiktok" aria-label="TikTok logo">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.2c.7 1.3 1.9 2.2 3.5 2.5v2.2c-1.2-.1-2.4-.5-3.4-1.2v6.6c0 3-2.3 5.5-5.4 5.5-2.9 0-5.2-2.3-5.2-5.2S8.1 9.2 11 9.2c.6 0 1.2.1 1.7.3v2.5c-.5-.2-1-.3-1.6-.3-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V4.2h2.8z" fill="currentColor"/></svg>
+                    </span>
+                    TikTok
+                  </a>
+                </li>
+                <li>
+                  <a class="social-link" href="https://www.facebook.com/planetcollectionroma" target="_blank" rel="noreferrer">
+                    <span class="social-icon facebook" aria-label="Facebook logo">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-7.1h2.4l.4-2.8h-2.8V7.7c0-.8.2-1.4 1.6-1.4h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.3v2.1H7.9v2.8h2.9V21h2.9z" fill="currentColor"/></svg>
+                    </span>
+                    Facebook
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-card">
+              <div class="section-heading" style="margin-bottom: 0;">
+                <h2 style="font-size: clamp(1.9rem, 2.5vw, 2.5rem);">Richiedi informazioni</h2>
+              </div>
+              <form class="contact-form" action="mailto:info.planetcollection@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="nome" placeholder="Nome" aria-label="Nome" />
+                <input type="email" name="email" placeholder="Email" aria-label="Email" />
+                <textarea name="messaggio" placeholder="Messaggio" aria-label="Messaggio"></textarea>
+                <button class="cta" type="submit" style="border:0; cursor:pointer;">Invia richiesta</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+    <a class="floating-whatsapp" href="https://wa.me/393927861863" target="_blank" rel="noreferrer" aria-label="Contatta su WhatsApp">✆</a>
+
     <footer>
-      <div class="container" style="display:flex; justify-content:space-between; gap: 16px; flex-wrap: wrap;">
-        <span>© 2026 Planet Collection Roma</span>
-        <span>info@planetcollectionroma.it</span>
+      <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;">
+        <span>Planet Collection Roma</span>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+          <a class="social-link" href="https://www.instagram.com/planetcollectionroma/" target="_blank" rel="noreferrer">
+            <span class="social-icon instagram" aria-label="Instagram logo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+            </span>
+            Instagram
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@planetcollectionroma" target="_blank" rel="noreferrer">
+            <span class="social-icon tiktok" aria-label="TikTok logo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.2c.7 1.3 1.9 2.2 3.5 2.5v2.2c-1.2-.1-2.4-.5-3.4-1.2v6.6c0 3-2.3 5.5-5.4 5.5-2.9 0-5.2-2.3-5.2-5.2S8.1 9.2 11 9.2c.6 0 1.2.1 1.7.3v2.5c-.5-.2-1-.3-1.6-.3-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V4.2h2.8z" fill="currentColor"/></svg>
+            </span>
+            TikTok
+          </a>
+          <a class="social-link" href="https://www.facebook.com/planetcollectionroma" target="_blank" rel="noreferrer">
+            <span class="social-icon facebook" aria-label="Facebook logo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-7.1h2.4l.4-2.8h-2.8V7.7c0-.8.2-1.4 1.6-1.4h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.3v2.1H7.9v2.8h2.9V21h2.9z" fill="currentColor"/></svg>
+            </span>
+            Facebook
+          </a>
+        </div>
+        <span>planetcollectionroma.it</span>
       </div>
     </footer>
   </body>
