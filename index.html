@@ -440,8 +440,10 @@
 
       .product-gallery-track {
         display: flex;
+        gap: 8px;
         width: max-content;
         height: 100%;
+        padding: 0 8px;
         animation: productGallery 18s linear infinite;
       }
 
@@ -450,13 +452,14 @@
       }
 
       .product-gallery-track img {
-        flex: 0 0 80%;
-        width: 80%;
+        flex: 0 0 calc(50% - 8px);
+        width: calc(50% - 8px);
         height: 100%;
         display: block;
         object-fit: cover;
         object-position: center center;
         background: #0b1017;
+        border-radius: 12px;
       }
 
       @keyframes productGallery {
