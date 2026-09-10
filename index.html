@@ -438,7 +438,14 @@
         aspect-ratio: 5 / 6;
       }
 
-      .product-gallery img {
+      .product-gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        height: 100%;
+      }
+
+      .product-gallery-grid img {
         width: 100%;
         height: 100%;
         display: block;
@@ -876,7 +883,10 @@
           <div class="feature-grid">
             <article class="product">
               <div class="product-gallery" aria-label="Cosplay Zoro">
-                <img src="assets/zoro.png" alt="Cosplay Zoro" />
+                <div class="product-gallery-grid">
+                  <img src="assets/zoro.png" alt="Cosplay Zoro" />
+                  <img src="assets/cosplay/s-l1600 (5).png" alt="Cosplay secondaria" />
+                </div>
               </div>
               <div class="product-body">
                 <h3>Cosplay</h3>
