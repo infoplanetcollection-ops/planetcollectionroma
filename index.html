@@ -431,6 +431,35 @@
         object-position: center 16%;
       }
 
+      .product-gallery {
+        position: relative;
+        overflow: hidden;
+        background: #0b1017;
+      }
+
+      .product-gallery-track {
+        display: flex;
+        width: max-content;
+        animation: productGallery 18s linear infinite;
+      }
+
+      .product-gallery-track:hover {
+        animation-play-state: paused;
+      }
+
+      .product-gallery-track img {
+        flex: 0 0 100%;
+        width: 100%;
+        aspect-ratio: 5 / 6;
+        object-fit: cover;
+        object-position: center 16%;
+      }
+
+      @keyframes productGallery {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
       .product-body {
         padding: 16px;
       }
@@ -859,7 +888,18 @@
 
           <div class="feature-grid">
             <article class="product">
-              <img src="assets/zoro.png" alt="Cosplay Zoro" />
+              <div class="product-gallery" aria-label="Galleria cosplay in movimento">
+                <div class="product-gallery-track">
+                  <img src="assets/zoro.png" alt="Cosplay Zoro" />
+                  <img src="assets/costumi/costume_01.png" alt="Cosplay elegante" />
+                  <img src="assets/costumi/costume_02.png" alt="Cosplay scenico" />
+                  <img src="assets/costumi/costume_03.png" alt="Cosplay originale" />
+                  <img src="assets/zoro.png" alt="Cosplay Zoro duplice" />
+                  <img src="assets/costumi/costume_01.png" alt="Cosplay elegante duplice" />
+                  <img src="assets/costumi/costume_02.png" alt="Cosplay scenico duplice" />
+                  <img src="assets/costumi/costume_03.png" alt="Cosplay originale duplice" />
+                </div>
+              </div>
               <div class="product-body">
                 <h3>Cosplay</h3>
                 <p>Look completi e curati per spettacoli, eventi a tema e interpretazioni da protagonista.</p>
