@@ -438,30 +438,13 @@
         aspect-ratio: 5 / 6;
       }
 
-      .product-gallery-track {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        animation: productGallery 18s linear infinite;
-      }
-
-      .product-gallery-track:hover {
-        animation-play-state: paused;
-      }
-
-      .product-gallery-track img {
-        flex: 0 0 100%;
+      .product-gallery img {
         width: 100%;
         height: 100%;
         display: block;
         object-fit: cover;
         object-position: center center;
         background: #0b1017;
-      }
-
-      @keyframes productGallery {
-        from { transform: translateX(0); }
-        to { transform: translateX(-100%); }
       }
 
       .product-body {
@@ -892,23 +875,8 @@
 
           <div class="feature-grid">
             <article class="product">
-              <div class="product-gallery" aria-label="Galleria cosplay in movimento">
-                <div class="product-gallery-track">
-                  <img src="assets/cosplay/s-l1600.png" alt="Cosplay look 1" />
-                  <img src="assets/cosplay/s-l1600 (5).png" alt="Cosplay look 2" />
-                  <img src="assets/cosplay/s-l1600 (6).png" alt="Cosplay look 3" />
-                  <img src="assets/cosplay/s-l1600 (7).png" alt="Cosplay look 4" />
-                  <img src="assets/cosplay/s-l1600 (8).webp" alt="Cosplay look 5" />
-                  <img src="assets/cosplay/Screenshot 2026-09-10 181119.png" alt="Cosplay look 6" />
-                  <img src="assets/zoro.png" alt="Zoro cosplay" />
-                  <img src="assets/cosplay/s-l1600.png" alt="Cosplay look 1 duplice" />
-                  <img src="assets/cosplay/s-l1600 (5).png" alt="Cosplay look 2 duplice" />
-                  <img src="assets/cosplay/s-l1600 (6).png" alt="Cosplay look 3 duplice" />
-                  <img src="assets/cosplay/s-l1600 (7).png" alt="Cosplay look 4 duplice" />
-                  <img src="assets/cosplay/s-l1600 (8).webp" alt="Cosplay look 5 duplice" />
-                  <img src="assets/cosplay/Screenshot 2026-09-10 181119.png" alt="Cosplay look 6 duplice" />
-                  <img src="assets/zoro.png" alt="Zoro cosplay duplice" />
-                </div>
+              <div class="product-gallery" aria-label="Cosplay Zoro">
+                <img src="assets/zoro.png" alt="Cosplay Zoro" />
               </div>
               <div class="product-body">
                 <h3>Cosplay</h3>
