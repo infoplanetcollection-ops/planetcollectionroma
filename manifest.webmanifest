@@ -1,0 +1,17 @@
+{
+  "name": "Planet Collection Roma",
+  "short_name": "Planet Collection",
+  "start_url": "app.html",
+  "display": "standalone",
+  "background_color": "#0b0d11",
+  "theme_color": "#0b0d11",
+  "description": "Catalogo prodotti Planet Collection Roma collegato allo store eBay.",
+  "icons": [
+    {
+      "src": "assets/logo-planet-collection-roma.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

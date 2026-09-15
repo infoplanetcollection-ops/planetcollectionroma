@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planet Collection Roma</title>
+    <title>Planet Collection Roma | Negozio di Costumi, Maschere e Accessori a Roma</title>
     <meta
       name="description"
-      content="Planet Collection Roma - costumi, maschere, accessori e trucco professionale per carnevale, Halloween, cosplay e teatro."
+      content="Planet Collection Roma: negozio di costumi, maschere, accessori e trucco professionale per carnevale, Halloween, cosplay e teatro a Roma."
+    />
+    <meta
+      name="keywords"
+      content="costumi a Roma, negozio di costumi Roma, maschere carnevale Roma, accessori cosplay Roma, trucco teatrale Roma, Halloween Roma, costumi carnevale Roma, parrucche Roma"
     />
     <meta name="theme-color" content="#0a0d12" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Planet Collection Roma" />
-    <meta property="og:description" content="Costumi, maschere, accessori e trucco professionale per carnevale, Halloween, cosplay e teatro." />
+    <meta property="og:title" content="Planet Collection Roma | Negozio di Costumi, Maschere e Accessori a Roma" />
+    <meta property="og:description" content="Negozio di costumi, maschere, accessori e trucco professionale per carnevale, Halloween, cosplay e teatro a Roma." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://planetcollectionroma.it/" />
     <meta property="og:image" content="https://planetcollectionroma.it/assets/logo-planet-collection-roma.png" />
@@ -244,6 +248,29 @@
         font-size: 0.9rem;
       }
 
+      .trust-bar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.02);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .trust-item strong {
+        color: var(--text);
+      }
+
       .hero-card {
         background: linear-gradient(180deg, rgba(20,28,38,0.96), rgba(12,18,26,0.96));
         border: 1px solid rgba(255,255,255,0.08);
@@ -344,6 +371,44 @@
       }
 
       .reparto p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .value-card {
+        padding: 24px 20px;
+        background: linear-gradient(180deg, rgba(17,24,35,0.94), rgba(13,18,26,0.96));
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .value-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(244,199,95,0.18), rgba(122,203,255,0.12));
+        color: var(--accent);
+        font-size: 1.35rem;
+        font-weight: 800;
+      }
+
+      .value-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .value-card p {
         margin: 0;
         color: var(--muted);
       }
@@ -583,32 +648,37 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 10px 14px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(255,255,255,0.03);
+        width: 100%;
+        padding: 16px 18px;
+        border: 1px solid rgba(122,203,255,0.45);
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(122,203,255,0.18), rgba(244,199,95,0.14));
         color: var(--text);
         text-decoration: none;
-        font-weight: 700;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        box-shadow: 0 18px 30px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       }
 
       .maps-link:hover {
-        transform: translateY(-1px);
-        border-color: rgba(244,199,95,0.7);
-        color: var(--accent);
+        transform: translateY(-2px);
+        border-color: rgba(244,199,95,0.9);
+        box-shadow: 0 22px 34px rgba(0,0,0,0.24);
+        color: var(--text);
       }
 
       .maps-pin {
-        width: 28px;
-        height: 28px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         background: linear-gradient(135deg, #fbbc04, #ea4335);
         color: #171717;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        flex-shrink: 0;
       }
 
       .social-icon {
@@ -821,7 +891,7 @@
         <nav class="nav-links" aria-label="Navigazione principale">
           <a href="#costumi">Reparti</a>
           <a href="#in-evidenza">In evidenza</a>
-          <a href="#recensioni">Recensioni</a>
+          <a href="#contatti">Dove siamo</a>
           <a href="#contatti">Contatti</a>
         </nav>
         <a class="cta" href="#contatti">Vieni a trovarci</a>
@@ -833,29 +903,33 @@
         <div class="container hero-grid">
           <div>
             <span class="eyebrow">Planet Collection Roma</span>
-            <h1>Trasforma ogni idea in un personaggio indimenticabile.</h1>
+            <h1>Costumi, Maschere e Accessori per Carnevale, Halloween e Cosplay a Roma</h1>
             <p class="lead">
-              Costumi, maschere, accessori e trucco professionale per carnevale, Halloween,
-              cosplay, teatro e scene live. Una selezione curata per rendere ogni look unico,
-              scenico e memorabile.
+              Negozio di costumi a Roma per carnevale, Halloween, cosplay, teatro e eventi speciali: trovi maschere, accessori, trucco professionale e look completi per trasformare ogni idea in un personaggio unico.
             </p>
             <div class="hero-actions">
               <a class="cta" href="#costumi">Scopri i reparti</a>
-              <a class="secondary" href="#contatti">Contatta ora</a>
+              <a class="secondary" href="app.html">Catalogo</a>
+              <a class="secondary" href="https://wa.me/393927861863" target="_blank" rel="noreferrer">Contatta ora</a>
             </div>
             <div class="stats">
               <div class="stat">
                 <strong>99,7%</strong>
-                <span>Feedback positivi</span>
+                <span>Clienti soddisfatti</span>
               </div>
               <div class="stat">
                 <strong>31k</strong>
                 <span>Oggetti venduti</span>
               </div>
               <div class="stat">
-                <strong>1,3k</strong>
-                <span>Follower</span>
+                <strong>Roma</strong>
+                <span>Negozio fisico</span>
               </div>
+            </div>
+            <div class="trust-bar" aria-label="Dati di fiducia del negozio">
+              <div class="trust-item"><strong>🏬</strong> Negozio a Roma</div>
+              <div class="trust-item"><strong>✨</strong> Catalogo completo</div>
+              <div class="trust-item"><strong>💬</strong> Assistenza real-time</div>
             </div>
           </div>
 
@@ -871,29 +945,61 @@
         </div>
       </section>
 
+      <section id="perche-noi">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Perché scegliere Planet Collection Roma</h2>
+            <p>Un negozio di costumi e accessori a Roma pensato per chi cerca qualità, originalità e consigli davvero utili per ogni evento.</p>
+          </div>
+
+          <div class="value-grid">
+            <article class="value-card">
+              <div class="value-number">01</div>
+              <h3>Esperienza</h3>
+              <p>Un background consolidato nel settore dei costumi, accessori e trasformazioni sceniche.</p>
+            </article>
+            <article class="value-card">
+              <div class="value-number">02</div>
+              <h3>Catalogo curato</h3>
+              <p>Selezione attenta di prodotti belli, funzionali e adatti a ogni tema e occasione.</p>
+            </article>
+            <article class="value-card">
+              <div class="value-number">03</div>
+              <h3>Qualità</h3>
+              <p>Ogni dettaglio è studiato per offrire un risultato scenico, pulito e memorabile.</p>
+            </article>
+            <article class="value-card">
+              <div class="value-number">04</div>
+              <h3>Assistenza</h3>
+              <p>Ti aiutiamo a trovare la soluzione giusta con consigli pratici e personalizzati.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="reparti">
         <div class="container">
           <div class="section-heading">
-            <h2>Il negozio dove il costume diventa identità.</h2>
-            <p>Materiali da scena, dettagli curati e accessori pensati per dare forma a un personaggio davvero riconoscibile.</p>
+            <h2>Negozio di costumi e accessori a Roma</h2>
+            <p>Materiali da scena, dettagli curati e accessori pensati per dare forma a un personaggio davvero riconoscibile, con look perfetti per carnevale, Halloween, cosplay e teatro.</p>
           </div>
 
           <div class="reparti-grid">
             <article class="reparto">
               <div class="icon">🎭</div>
-              <h3>Costumi</h3>
+              <h3>Costumi a Roma</h3>
               <p>Look completi per carnevale, Halloween e cosplay, studiati per essere perfetti, scenici e memorabili.</p>
             </article>
 
             <article class="reparto">
               <div class="icon">🎪</div>
-              <h3>Maschere</h3>
-              <p>Maschere artistiche e sceniche, curate nei dettagli per un risultato forte e impeccabile.</p>
+              <h3>Maschere per Carnevale</h3>
+              <p>Maschere artistiche e sceniche, curate nei dettagli per un risultato forte, originale e impeccabile.</p>
             </article>
 
             <article class="reparto">
               <div class="icon">✨</div>
-              <h3>Trucco</h3>
+              <h3>Trucco professionale</h3>
               <p>Prodotti professionali, colori intensi e effetti speciali per chi vuole una trasformazione completa.</p>
             </article>
 
@@ -1196,32 +1302,6 @@
         </div>
       </section>
 
-      <section id="recensioni">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Le opinioni dei nostri clienti</h2>
-            <p>Piccoli dettagli, grandi trasformazioni: ecco cosa dicono chi ci ha scelto.</p>
-          </div>
-
-          <div class="review-grid">
-            <article class="review">
-              <p>“Sito curato, assistenza impeccabile e prodotti davvero belli. Ho trovato il costume perfetto per il mio evento.”</p>
-              <strong>Maria R.</strong>
-            </article>
-
-            <article class="review">
-              <p>“Atmosfera speciale, staff disponibile e scelta davvero interessante. Perfetto per trucco e accessori da scena.”</p>
-              <strong>Luca T.</strong>
-            </article>
-
-            <article class="review">
-              <p>“Un negozio che sa davvero trasformare un’idea in un look completo. Da consigliare assolutamente.”</p>
-              <strong>Sofia M.</strong>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="contatti">
         <div class="container">
           <div class="cta-banner">
@@ -1243,7 +1323,7 @@
                 <li>
                   <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Via+Antonio+Pacinotti+25+Roma" target="_blank" rel="noreferrer">
                     <span class="maps-pin" aria-label="Google Maps">📍</span>
-                    Apri indicazioni su Google Maps
+                    Indicazioni su Google Maps
                   </a>
                 </li>
                 <li>Telefono: <a href="tel:+390689836622">06 8983 6622</a></li>
