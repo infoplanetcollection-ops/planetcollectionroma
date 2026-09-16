@@ -1,0 +1,562 @@
+[
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale diabolica",
+    "image": "assets/maschere/mask_01.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera da Carnevale e feste in maschera.",
+    "keywords": ["carnevale", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale horror",
+    "image": "assets/maschere/mask_02.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera da Carnevale molto scenica e ad effetto horror.",
+    "keywords": ["carnevale", "maschera", "horror"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween da morto vivente",
+    "image": "assets/maschere/mask_03.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera ad effetto zombie perfetta per Halloween.",
+    "keywords": ["halloween", "maschera", "zombie"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale demoniaca",
+    "image": "assets/maschere/mask_04.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera scenica ideale per feste in maschera e Halloween.",
+    "keywords": ["carnevale", "halloween", "maschera", "demoniaca"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween volto femminile",
+    "image": "assets/maschere/mask_05.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera elegante e scenica da Halloween o Carnevale.",
+    "keywords": ["halloween", "carnevale", "maschera", "volto"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale rossa",
+    "image": "assets/maschere/mask_06.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera scenica e vibrante per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "maschera", "rossa"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween da strega",
+    "image": "assets/maschere/mask_07.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera da strega perfetta per Halloween e serate dark.",
+    "keywords": ["halloween", "strega", "maschera"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale da regina",
+    "image": "assets/costumi/costume_01.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look completo per Carnevale e serate a tema.",
+    "keywords": ["carnevale", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale storico",
+    "image": "assets/costumi/costume_02.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito elegante e scenografico per il Carnevale.",
+    "keywords": ["carnevale", "costume", "storico"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale da strega",
+    "image": "assets/costumi/costume_03.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito da strega perfetto per Carnevale e Halloween.",
+    "keywords": ["carnevale", "halloween", "strega", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale vampiro",
+    "image": "assets/costumi/costume_04.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito da vampiro perfetto per una serata di Carnevale.",
+    "keywords": ["carnevale", "vampiro", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale strega nera",
+    "image": "assets/costumi/costume_05.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look dark e teatrale per Carnevale e Halloween.",
+    "keywords": ["carnevale", "halloween", "strega", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale zombie",
+    "image": "assets/costumi/costume_06.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito da zombie perfetto per Halloween e festeggiamenti.",
+    "keywords": ["halloween", "carnevale", "zombie", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale fata oscura",
+    "image": "assets/costumi/costume_07.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look da fata oscura ideale per Halloween e serate a tema.",
+    "keywords": ["halloween", "carnevale", "fata", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale mercenario",
+    "image": "assets/costumi/costume_08.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito scenico e originale per Carnevale e spettacoli.",
+    "keywords": ["carnevale", "mercenario", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Halloween angelo oscuro",
+    "image": "assets/costumi/costume_09.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito elegante dark per Halloween e feste in costume.",
+    "keywords": ["halloween", "angelo", "dark", "costume"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale nera",
+    "image": "assets/parrucche/s-l1600.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca perfetta per trasformare il look da Carnevale.",
+    "keywords": ["carnevale", "parrucca"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale bionda vintage",
+    "image": "assets/parrucche/s-l500.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca vintage ideale per look teatrali e Carnevale.",
+    "keywords": ["carnevale", "parrucca", "vintage"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Halloween rossa",
+    "image": "assets/parrucche/s-l500 (1).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca ad effetto horror e vampata per Halloween.",
+    "keywords": ["halloween", "parrucca", "rossa"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale bionda con ciocche",
+    "image": "assets/parrucche/s-l500 (2).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca scenica da Carnevale e feste in maschera.",
+    "keywords": ["carnevale", "parrucca", "bionda"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Halloween nera lunga",
+    "image": "assets/parrucche/s-l500 (3).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca lunga e dark perfetta per costume Halloween.",
+    "keywords": ["halloween", "parrucca", "nera"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco Halloween effetto scheletro",
+    "image": "assets/trucco/s-l1200-3.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Prodotto e idea make-up per Halloween.",
+    "keywords": ["halloween", "trucco", "scheletro"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Halloween teschio",
+    "image": "assets/trucco/s-l1200-9.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Make up da Halloween ad effetto teschio e volto scenico.",
+    "keywords": ["halloween", "trucco", "teschio"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Carnevale occhi di gatto",
+    "image": "assets/trucco/s-l1200-10.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Make-up da Carnevale e Halloween con effetto occhi da gatto.",
+    "keywords": ["carnevale", "halloween", "trucco", "occhi"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Halloween fanghi e sangue",
+    "image": "assets/trucco/s-l1200-11.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Effetto horror perfetto per Halloween e feste dark.",
+    "keywords": ["halloween", "trucco", "horror", "sangue"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Carnevale fiammata",
+    "image": "assets/trucco/s-l1200-12.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look brillante e teatrale per il Carnevale.",
+    "keywords": ["carnevale", "trucco", "fiammata"]
+  },
+  {
+    "category": "halloween",
+    "name": "Scheletro decorativo Halloween 165 cm",
+    "image": "https://i.ebayimg.com/images/g/3woAAeSw7hJo1TDi/s-l300.webp",
+    "ebayUrl": "https://www.ebay.it/itm/167796946127",
+    "description": "Decorazione scenica perfetta per Halloween e feste a tema.",
+    "keywords": ["halloween", "scheletro"]
+  },
+  {
+    "category": "halloween",
+    "name": "Copricapo egizio Faraone Aida",
+    "image": "https://i.ebayimg.com/images/g/kAcAAeSwChBpW~fH/s-l300.webp",
+    "ebayUrl": "https://www.ebay.it/itm/168681146760",
+    "description": "Accessorio per Carnevale e Halloween.",
+    "keywords": ["halloween", "carnevale", "accessorio"]
+  },
+  {
+    "category": "halloween",
+    "name": "Corvo da spalla Malefica",
+    "image": "https://i.ebayimg.com/images/g/eksAAeSwJs5qpCRO/s-l300.webp",
+    "ebayUrl": "https://www.ebay.it/itm/168681118966",
+    "description": "Accessorio scenico per Halloween e spettacoli.",
+    "keywords": ["halloween", "malefica", "corvo"]
+  },
+  {
+    "category": "halloween",
+    "name": "Decorazione Halloween tavolo spettrale",
+    "image": "assets/trucco/s-l1200-8.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Set decorativo in tema Halloween per ambiente e foto.",
+    "keywords": ["halloween", "decorazione", "tavolo"]
+  },
+  {
+    "category": "halloween",
+    "name": "Set Halloween da tavola e foto",
+    "image": "assets/trucco/s-l1200-13.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Accessori decorativi per un ambiente horror da Halloween.",
+    "keywords": ["halloween", "set", "decorazione"]
+  },
+  {
+    "category": "halloween",
+    "name": "Accessorio Halloween da muro",
+    "image": "assets/trucco/s-l1200-14.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Decorazione da parete perfetta per Halloween e feste da paura.",
+    "keywords": ["halloween", "accessorio", "decorazione"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale cavaliere oscuro",
+    "image": "assets/costumi/costume_10.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look elegante e misterioso per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "cavaliere", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Halloween demone",
+    "image": "assets/costumi/costume_11.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito scenico da demone perfetto per Halloween.",
+    "keywords": ["halloween", "demone", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale frankenstein",
+    "image": "assets/costumi/costume_12.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito da mostro ideale per serate di Carnevale.",
+    "keywords": ["carnevale", "frankenstein", "costume"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale lupo",
+    "image": "assets/maschere/mask_08.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera da lupo perfetta per serate a tema e Carnevale.",
+    "keywords": ["carnevale", "lupo", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween dracula",
+    "image": "assets/maschere/mask_09.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera dracula per Halloween e feste horror.",
+    "keywords": ["halloween", "dracula", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale gatto nero",
+    "image": "assets/maschere/mask_10.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera chic e scenica da gatto nero per Carnevale.",
+    "keywords": ["carnevale", "gatto", "maschera"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Halloween bianca da strega",
+    "image": "assets/parrucche/s-l500 (4).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca da strega perfetta per Halloween e look dark.",
+    "keywords": ["halloween", "strega", "parrucca"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale rasta",
+    "image": "assets/parrucche/s-l500 (5).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca colorata e scenica per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "parrucca", "rasta"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Halloween demoniaco",
+    "image": "assets/trucco/s-l1200-15.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Make-up demoniaco ad effetto horror per Halloween.",
+    "keywords": ["halloween", "trucco", "demoniaco"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Carnevale viola glamour",
+    "image": "assets/trucco/s-l1200-16.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look glamour e teatrale perfetto per Carnevale.",
+    "keywords": ["carnevale", "trucco", "viola"]
+  },
+  {
+    "category": "halloween",
+    "name": "Decorazione Halloween cimitero mini",
+    "image": "assets/trucco/s-l1200-17.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Accessori e decorazioni da cimitero per Halloween.",
+    "keywords": ["halloween", "decorazione", "cimitero"]
+  },
+  {
+    "category": "halloween",
+    "name": "Accessorio Halloween lampadario spettrale",
+    "image": "assets/trucco/s-l1200-18.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Decorazione da interno per una casa da paura.",
+    "keywords": ["halloween", "decorazione", "spettrale"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale elfo oscuro",
+    "image": "assets/costumi/costume_13.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito misterioso e scenico per feste di Carnevale.",
+    "keywords": ["carnevale", "elfo", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Halloween diavolo",
+    "image": "assets/costumi/costume_14.png",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito da diavolo perfetto per Halloween e serate dark.",
+    "keywords": ["halloween", "diavolo", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale re dei morti",
+    "image": "assets/costumi/costume_15.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look da regnante oscuro perfetto per Carnevale.",
+    "keywords": ["carnevale", "re", "morti", "costume"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale medusa",
+    "image": "assets/maschere/mask_11.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera scenica e originale adatta a Carnevale e feste.",
+    "keywords": ["carnevale", "medusa", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween mostro marino",
+    "image": "assets/maschere/mask_12.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera inquietante perfetta per Halloween.",
+    "keywords": ["halloween", "mostro", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale cobra",
+    "image": "assets/maschere/mask_13.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera da serpente e look dark per carnevale.",
+    "keywords": ["carnevale", "cobra", "maschera"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Halloween verde",
+    "image": "assets/parrucche/s-l500 (6).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca rara e scenica da Halloween e feste dark.",
+    "keywords": ["halloween", "verde", "parrucca"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale rossa lunga",
+    "image": "assets/parrucche/s-l500 (7).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca elegante e teatrale adatta a Carnevale.",
+    "keywords": ["carnevale", "rossa", "parrucca"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Halloween volto da scheletro",
+    "image": "assets/trucco/s-l1200-19.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Effetto volto da scheletro perfetto per Halloween.",
+    "keywords": ["halloween", "scheletro", "trucco"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Carnevale arcobaleno",
+    "image": "assets/trucco/s-l1200-20.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look colorato e teatrale per serate di Carnevale.",
+    "keywords": ["carnevale", "trucco", "arcobaleno"]
+  },
+  {
+    "category": "halloween",
+    "name": "Set Halloween luce spettrale",
+    "image": "assets/trucco/s-l1200-21.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Accessori luminosi per ambienti Halloween da paura.",
+    "keywords": ["halloween", "luce", "decorazione"]
+  },
+  {
+    "category": "halloween",
+    "name": "Decorazione Halloween grotta del terrore",
+    "image": "assets/trucco/s-l1200-22.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Set decorativo con atmosfera da grotta e mistero.",
+    "keywords": ["halloween", "grotta", "decorazione"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Carnevale principessa gotica",
+    "image": "assets/costumi/costume_15.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Look scenografico e raffinato per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "principessa", "gotica", "costume"]
+  },
+  {
+    "category": "costumi",
+    "name": "Costume da Halloween fantasma elegante",
+    "image": "assets/costumi/costume_16.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Abito teatrale e misterioso per Halloween e serate in maschera.",
+    "keywords": ["halloween", "fantasma", "costume"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale corvo nero",
+    "image": "assets/maschere/mask_14.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera elegante e originale per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "corvo", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween pagliaccio inquietante",
+    "image": "assets/maschere/mask_15.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera ad effetto horror per Halloween e serate da paura.",
+    "keywords": ["halloween", "pagliaccio", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale veneziana dorata",
+    "image": "assets/maschere/mask_16.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Accessorio elegante per Carnevale, balli e feste in maschera.",
+    "keywords": ["carnevale", "veneziana", "dorata", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween teschio decorato",
+    "image": "assets/maschere/mask_17.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera decorata dal carattere dark per Halloween.",
+    "keywords": ["halloween", "teschio", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera da Carnevale gatto veneziano",
+    "image": "assets/maschere/mask_18.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera raffinata per completare un look da Carnevale.",
+    "keywords": ["carnevale", "gatto", "veneziana", "maschera"]
+  },
+  {
+    "category": "maschere",
+    "name": "Maschera Halloween demone rosso",
+    "image": "assets/maschere/mask_19.jpg",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Maschera intensa e scenica per Halloween e feste horror.",
+    "keywords": ["halloween", "demone", "rossa", "maschera"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale blu elettrico",
+    "image": "assets/parrucche/s-l500 (8).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Colore deciso e look scenico per Carnevale e feste a tema.",
+    "keywords": ["carnevale", "blu", "parrucca"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca Halloween viola da strega",
+    "image": "assets/parrucche/s-l500 (9).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Accessorio perfetto per un costume da strega di Halloween.",
+    "keywords": ["halloween", "viola", "strega", "parrucca"]
+  },
+  {
+    "category": "parrucche",
+    "name": "Parrucca da Carnevale riccia castana",
+    "image": "assets/parrucche/s-l500 (10).webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Parrucca versatile per trasformare il look durante il Carnevale.",
+    "keywords": ["carnevale", "riccia", "castana", "parrucca"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco Halloween effetto ferita",
+    "image": "assets/trucco/s-l1200-23.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Make-up scenico per creare un look horror da Halloween.",
+    "keywords": ["halloween", "ferita", "horror", "trucco"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco da Carnevale effetto glitter",
+    "image": "assets/trucco/s-l1200-24.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Make-up brillante per look creativi e feste di Carnevale.",
+    "keywords": ["carnevale", "glitter", "trucco"]
+  },
+  {
+    "category": "trucco",
+    "name": "Trucco Halloween effetto vampiro",
+    "image": "assets/trucco/s-l1200-25.webp",
+    "ebayUrl": "https://www.ebay.it/str/planetcollectionroma",
+    "description": "Idea make-up dark per completare un costume da vampiro.",
+    "keywords": ["halloween", "vampiro", "trucco"]
+  }
+]
