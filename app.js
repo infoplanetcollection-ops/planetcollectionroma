@@ -52,6 +52,8 @@ const products = [
   { category: 'cosplay', name: 'Cosplay Zoro', image: 'assets/zoro.png', description: 'Un look iconico per gli appassionati di cosplay.' }
 ];
 
+let catalogProducts = products;
+
 const catalog = document.querySelector('#catalog');
 const filters = document.querySelector('#filters');
 const search = document.querySelector('#search');
@@ -77,6 +79,10 @@ function writeSavedProducts(saved) {
 const saved = readSavedProducts();
 let activeCategory = 'tutti';
 
+function buildEbayUrl(product) {
+  return product.ebayUrl || storeUrl;
+}
+
 function categoryLabel(key) {
   return categories.find((category) => category.key === key)?.label || key;
 }
@@ -92,7 +98,7 @@ function renderFilters() {
 
 function renderProducts() {
   const query = search.value.trim().toLowerCase();
-  const visible = products.filter((product) => {
+  const visible = catalogProducts.filter((product) => {
     const productKey = `${product.category}-${product.name}`;
     const matchesSaved = activeCategory === 'preferiti' ? saved.has(productKey) : true;
     const matchesCategory = activeCategory === 'tutti' || activeCategory === 'preferiti' ? true : product.category === activeCategory;
@@ -111,9 +117,10 @@ function renderProducts() {
   catalog.innerHTML = visible.map((product, index) => {
     const productKey = `${product.category}-${product.name}`;
     const isSaved = saved.has(productKey);
+    const productUrl = buildEbayUrl(product);
     return `<article class="product" style="animation-delay:${Math.min(index, 12) * 35}ms">
       <div class="product-image"><img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.closest('.product').remove()" /><button class="heart ${isSaved ? 'saved' : ''}" data-save="${productKey}" aria-label="${isSaved ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}">${isSaved ? '♥' : '♡'}</button></div>
-      <div class="product-body"><div class="category">${categoryLabel(product.category)}</div><h2>${product.name}</h2><p>${product.description}</p><a class="ebay-button" href="${product.ebayUrl || storeUrl}" target="_blank" rel="noopener">Vedi su <b>eBay</b> <span aria-hidden="true">↗</span></a></div>
+      <div class="product-body"><div class="category">${categoryLabel(product.category)}</div><h2>${product.name}</h2><p>${product.description}</p><a class="ebay-button" href="${productUrl}" target="_blank" rel="noopener noreferrer">Vedi su <b>eBay</b> <span aria-hidden="true">↗</span></a></div>
     </article>`;
   }).join('');
 
@@ -128,6 +135,18 @@ function renderProducts() {
 search.addEventListener('input', renderProducts);
 renderFilters();
 renderProducts();
+
+fetch('ebay-products.json', { cache: 'no-store' })
+  .then((response) => response.ok ? response.json() : [])
+  .then((ebayProducts) => {
+    if (!Array.isArray(ebayProducts) || !ebayProducts.length) return;
+    const existingUrls = new Set(products.map((product) => product.ebayUrl).filter(Boolean));
+    catalogProducts = [...products, ...ebayProducts.filter((product) => !existingUrls.has(product.ebayUrl))];
+    renderProducts();
+  })
+  .catch(() => {
+    // The built-in catalog remains available when the generated feed is unavailable.
+  });
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
