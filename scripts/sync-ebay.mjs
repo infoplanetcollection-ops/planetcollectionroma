@@ -1,7 +1,7 @@
 import { writeFile } from 'node:fs/promises';
 
-const appId = process.env.EBAY_APP_ID;
-const certId = process.env.EBAY_CERT_ID;
+const appId = process.env.EBAY_APP_ID?.trim();
+const certId = process.env.EBAY_CERT_ID?.trim();
 const seller = 'planetcollection2001';
 
 if (!appId || !certId) {
