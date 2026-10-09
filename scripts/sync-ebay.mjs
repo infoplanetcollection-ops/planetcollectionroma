@@ -24,6 +24,7 @@ if (!tokenResponse.ok) {
 
 const { access_token: accessToken } = await tokenResponse.json();
 const params = new URLSearchParams({
+  q: '*',
   filter: `sellers:{${seller}}`,
   fieldgroups: 'EXTENDED',
   limit: '200'
