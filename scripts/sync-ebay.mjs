@@ -23,26 +23,37 @@ if (!tokenResponse.ok) {
 }
 
 const { access_token: accessToken } = await tokenResponse.json();
-const params = new URLSearchParams({
-  q: '*',
-  filter: `sellers:{${seller}}`,
-  fieldgroups: 'EXTENDED',
-  limit: '200'
-});
-const itemsResponse = await fetch(`https://api.ebay.com/buy/browse/v1/item_summary/search?${params}`, {
-  headers: {
-    Authorization: `Bearer ${accessToken}`,
-    Accept: 'application/json',
-    'X-EBAY-C-MARKETPLACE-ID': 'EBAY_IT'
-  }
-});
+const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'vintage'];
+const itemsById = new Map();
 
-if (!itemsResponse.ok) {
-  throw new Error(`eBay item request failed: ${itemsResponse.status} ${await itemsResponse.text()}`);
+for (const q of queries) {
+  const params = new URLSearchParams({
+    q,
+    filter: `sellers:{${seller}}`,
+    fieldgroups: 'EXTENDED',
+    limit: '200'
+  });
+  const itemsResponse = await fetch(`https://api.ebay.com/buy/browse/v1/item_summary/search?${params}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: 'application/json',
+      'X-EBAY-C-MARKETPLACE-ID': 'EBAY_IT'
+    }
+  });
+
+  if (itemsResponse.status === 204) continue;
+  if (!itemsResponse.ok) {
+    throw new Error(`eBay item request failed (${q}): ${itemsResponse.status} ${await itemsResponse.text()}`);
+  }
+
+  const data = await itemsResponse.json();
+  for (const item of data.itemSummaries || []) {
+    const key = item.itemId || item.itemWebUrl;
+    if (key && !itemsById.has(key)) itemsById.set(key, item);
+  }
 }
 
-const data = await itemsResponse.json();
-const products = (data.itemSummaries || []).map((item) => ({
+const products = [...itemsById.values()].map((item) => ({
   category: categoryFor(item.title),
   name: item.title,
   image: item.image?.imageUrl || item.thumbnailImages?.[0]?.imageUrl,
