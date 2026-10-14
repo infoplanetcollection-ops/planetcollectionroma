@@ -1,4 +1,4 @@
-const cacheName = 'planet-catalog-v5';
+const cacheName = 'planet-catalog-v6';
 const appShell = ['app.html', 'app.js', 'manifest.webmanifest', 'assets/logo-planet-collection-roma.png'];
 
 self.addEventListener('install', (event) => {
