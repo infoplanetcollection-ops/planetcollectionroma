@@ -2,7 +2,7 @@ const storeUrl = 'https://www.ebay.it/str/planetcollectionroma';
 const categories = [
   { key: 'tutti', label: 'Tutto' },
   { key: 'preferiti', label: 'Preferiti' },
-  { key: 'halloween', label: 'Halloween 🎃' },
+  { key: 'halloween', label: 'Carnevale e Halloween 🎃' },
   { key: 'costumi', label: 'Costumi' },
   { key: 'maschere', label: 'Maschere' },
   { key: 'parrucche', label: 'Parrucche' },
