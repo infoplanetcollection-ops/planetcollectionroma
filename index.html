@@ -631,17 +631,24 @@
         color: var(--accent);
       }
 
-      .visit-counter {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
+      .consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
         color: var(--muted);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
       }
 
-      .visit-counter img {
+      .contact-form .consent input {
         width: auto;
-        height: 20px;
+        margin-top: 4px;
+        accent-color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .consent a {
+        color: var(--accent);
       }
 
       .maps-link {
@@ -1365,6 +1372,10 @@
                 <input type="text" name="nome" placeholder="Nome" aria-label="Nome" />
                 <input type="email" name="email" placeholder="Email" aria-label="Email" />
                 <textarea name="messaggio" placeholder="Messaggio" aria-label="Messaggio"></textarea>
+                <label class="consent">
+                  <input type="checkbox" required />
+                  <span>Ho letto l'<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei miei dati per essere ricontattato. *</span>
+                </label>
                 <button class="cta" type="submit" style="border:0; cursor:pointer;">Invia richiesta</button>
               </form>
             </div>
@@ -1398,9 +1409,7 @@
             Facebook
           </a>
         </div>
-        <span class="visit-counter">Visite al sito:
-          <img src="https://visitor-badge.laobi.icu/badge?page_id=planetcollectionroma.it" alt="Numero di visite al sito" />
-        </span>
+        <span><a href="privacy.html" style="color:var(--muted);">Privacy e Cookie Policy</a></span>
         <span>planetcollectionroma.it</span>
       </div>
     </footer>

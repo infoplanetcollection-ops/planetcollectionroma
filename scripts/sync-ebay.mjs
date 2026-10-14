@@ -23,7 +23,7 @@ if (!tokenResponse.ok) {
 }
 
 const { access_token: accessToken } = await tokenResponse.json();
-const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'vintage'];
+const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'vintage', 'vestito', 'travestimento'];
 const itemsById = new Map();
 
 for (const q of queries) {
@@ -66,12 +66,12 @@ console.log(`Saved ${products.length} eBay products.`);
 
 function categoryFor(title = '') {
   const value = title.toLowerCase();
-  if (/cosplay|zoro|harry potter|anime/.test(value)) return 'cosplay';
-  if (/maschera|mask/.test(value)) return 'maschere';
+  if (/halloween|scheletro|strega|fantasma|vampiro|zucca|teschio|zombie|horror|skeleton|witch|pumpkin|morticia|pipistrello/.test(value)) return 'halloween';
+  if (/cosplay|zoro|harry potter|anime|manga|one piece|naruto/.test(value)) return 'cosplay';
   if (/parrucca|wig/.test(value)) return 'parrucche';
-  if (/trucco|make.?up|fondotinta|rossetto/.test(value)) return 'trucco';
-  if (/halloween|scheletro|strega|fantasma|vampiro/.test(value)) return 'halloween';
-  if (/vintage|retro|anni 70|anni 80|sip/.test(value)) return 'vintage';
-  if (/costume|vestito|abito|camicia/.test(value)) return 'costumi';
+  if (/maschera|mask|veneziana/.test(value)) return 'maschere';
+  if (/trucco|make.?up|fondotinta|rossetto|cipria|mascara|eyeliner/.test(value)) return 'trucco';
+  if (/vintage|retro|anni ?['’]?(50|60|70|80|90)|\bsip\b|antico/.test(value)) return 'vintage';
+  if (/costume|vestito|abito|camicia|carnevale|travestimento|tuta|mantello|clown|pirata|principessa/.test(value)) return 'costumi';
   return 'collezionismo';
 }

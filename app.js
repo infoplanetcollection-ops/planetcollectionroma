@@ -2,8 +2,8 @@ const storeUrl = 'https://www.ebay.it/str/planetcollectionroma';
 const categories = [
   { key: 'tutti', label: 'Tutto' },
   { key: 'preferiti', label: 'Preferiti' },
+  { key: 'halloween', label: 'Halloween 🎃' },
   { key: 'costumi', label: 'Costumi' },
-  { key: 'halloween', label: 'Halloween' },
   { key: 'maschere', label: 'Maschere' },
   { key: 'parrucche', label: 'Parrucche' },
   { key: 'trucco', label: 'Trucco' },
@@ -58,6 +58,12 @@ const catalog = document.querySelector('#catalog');
 const filters = document.querySelector('#filters');
 const search = document.querySelector('#search');
 const storageKey = 'planet-saved';
+const currentMonth = new Date().getMonth();
+
+const introEyebrow = document.querySelector('#intro-eyebrow');
+if (introEyebrow && currentMonth === 9) {
+  introEyebrow.textContent = 'Catalogo ufficiale · Speciale Halloween';
+}
 
 function readSavedProducts() {
   try {
@@ -77,7 +83,9 @@ function writeSavedProducts(saved) {
 }
 
 const saved = readSavedProducts();
-let activeCategory = 'tutti';
+// In ottobre il catalogo si apre sulla categoria Halloween.
+const seasonalCategories = { 9: 'halloween' };
+let activeCategory = seasonalCategories[currentMonth] || 'tutti';
 
 function buildEbayUrl(product) {
   return product.ebayUrl || storeUrl;
@@ -87,8 +95,14 @@ function categoryLabel(key) {
   return categories.find((category) => category.key === key)?.label || key;
 }
 
+function countFor(key) {
+  if (key === 'tutti') return catalogProducts.length;
+  if (key === 'preferiti') return catalogProducts.filter((product) => saved.has(`${product.category}-${product.name}`)).length;
+  return catalogProducts.filter((product) => product.category === key).length;
+}
+
 function renderFilters() {
-  filters.innerHTML = categories.map((category) => `<button class="filter ${category.key === activeCategory ? 'active' : ''}" data-category="${category.key}">${category.label}</button>`).join('');
+  filters.innerHTML = categories.map((category) => `<button class="filter ${category.key === activeCategory ? 'active' : ''}" data-category="${category.key}">${category.label} (${countFor(category.key)})</button>`).join('');
   filters.querySelectorAll('.filter').forEach((button) => button.addEventListener('click', () => {
     activeCategory = button.dataset.category;
     renderFilters();
@@ -128,6 +142,7 @@ function renderProducts() {
     const key = button.dataset.save;
     saved.has(key) ? saved.delete(key) : saved.add(key);
     writeSavedProducts(saved);
+    renderFilters();
     renderProducts();
   }));
 }
@@ -142,6 +157,7 @@ fetch('ebay-products.json', { cache: 'no-store' })
     if (!Array.isArray(ebayProducts) || !ebayProducts.length) return;
     const existingUrls = new Set(products.map((product) => product.ebayUrl).filter(Boolean));
     catalogProducts = [...products, ...ebayProducts.filter((product) => !existingUrls.has(product.ebayUrl))];
+    renderFilters();
     renderProducts();
   })
   .catch(() => {
