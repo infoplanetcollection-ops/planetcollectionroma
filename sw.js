@@ -1,19 +1,25 @@
-const cacheName = 'planet-catalog-v7';
+const cacheName = 'planet-catalog-v8';
 const appShell = ['app.html', 'app.js', 'manifest.webmanifest', 'assets/logo-planet-collection-roma.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(cacheName).then((cache) => cache.addAll(appShell))
+    Promise.all([
+      caches.open(cacheName).then((cache) => cache.addAll(appShell)),
+      self.skipWaiting()
+    ])
   );
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(
-      keys
-        .filter((key) => key !== cacheName)
-        .map((key) => caches.delete(key))
-    ))
+    Promise.all([
+      caches.keys().then((keys) => Promise.all(
+        keys
+          .filter((key) => key !== cacheName)
+          .map((key) => caches.delete(key))
+      )),
+      self.clients.claim()
+    ])
   );
 });
 
