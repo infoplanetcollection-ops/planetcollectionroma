@@ -98,7 +98,12 @@ function categoryLabel(key) {
 function countFor(key) {
   if (key === 'tutti') return catalogProducts.length;
   if (key === 'preferiti') return catalogProducts.filter((product) => saved.has(`${product.category}-${product.name}`)).length;
+  if (key === 'halloween') return catalogProducts.filter(isSeasonalProduct).length;
   return catalogProducts.filter((product) => product.category === key).length;
+}
+
+function isSeasonalProduct(product) {
+  return product.category === 'halloween' || /\b(?:carnevale|halloween)\b/i.test(product.name);
 }
 
 function renderFilters() {
@@ -115,7 +120,8 @@ function renderProducts() {
   const visible = catalogProducts.filter((product) => {
     const productKey = `${product.category}-${product.name}`;
     const matchesSaved = activeCategory === 'preferiti' ? saved.has(productKey) : true;
-    const matchesCategory = activeCategory === 'tutti' || activeCategory === 'preferiti' ? true : product.category === activeCategory;
+    const matchesCategory = activeCategory === 'tutti' || activeCategory === 'preferiti' ||
+      (activeCategory === 'halloween' ? isSeasonalProduct(product) : product.category === activeCategory);
     const haystack = `${product.name} ${product.description} ${categoryLabel(product.category)}`.toLowerCase();
     return matchesSaved && matchesCategory && haystack.includes(query);
   });
