@@ -11,7 +11,7 @@ if (!appId || !certId) {
 const basicAuth = Buffer.from(`${appId}:${certId}`).toString('base64');
 const tokenResponse = await fetch('https://api.ebay.com/identity/v1/oauth2/token', {
   method: 'POST',
-  headers: {
+    headers: {
     Authorization: `Basic ${basicAuth}`,
     'Content-Type': 'application/x-www-form-urlencoded'
   },
@@ -24,32 +24,49 @@ if (!tokenResponse.ok) {
 
 const { access_token: accessToken } = await tokenResponse.json();
 const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'vintage', 'vestito', 'travestimento'];
+const seasonalQueries = new Set(['halloween', 'carnevale']);
+const seasonalTitlePattern = /\b(?:carnevale|halloween)\b/i;
 const itemsById = new Map();
 
 for (const q of queries) {
-  const params = new URLSearchParams({
-    q,
-    filter: `sellers:{${seller}}`,
-    fieldgroups: 'EXTENDED',
-    limit: '200'
-  });
-  const itemsResponse = await fetch(`https://api.ebay.com/buy/browse/v1/item_summary/search?${params}`, {
-    headers: {
+  const shouldPaginate = seasonalQueries.has(q);
+  let offset = 0;
+  while (true) {
+    if (offset > 10000) {
+      throw new Error(`eBay result limit exceeded while searching "${q}"; not all listings could be retrieved.`);
+    }
+
+    const params = new URLSearchParams({
+      q,
+      filter: `sellers:{${seller}}`,
+      fieldgroups: 'EXTENDED',
+      limit: '200',
+      ...(offset ? { offset: String(offset) } : {})
+    });
+    const itemsResponse = await fetch(`https://api.ebay.com/buy/browse/v1/item_summary/search?${params}`, {
+      headers: {
       Authorization: `Bearer ${accessToken}`,
       Accept: 'application/json',
       'X-EBAY-C-MARKETPLACE-ID': 'EBAY_IT'
     }
   });
 
-  if (itemsResponse.status === 204) continue;
-  if (!itemsResponse.ok) {
-    throw new Error(`eBay item request failed (${q}): ${itemsResponse.status} ${await itemsResponse.text()}`);
-  }
+    if (itemsResponse.status === 204) break;
+    if (!itemsResponse.ok) {
+      throw new Error(`eBay item request failed (${q}): ${itemsResponse.status} ${await itemsResponse.text()}`);
+    }
 
-  const data = await itemsResponse.json();
-  for (const item of data.itemSummaries || []) {
-    const key = item.itemId || item.itemWebUrl;
-    if (key && !itemsById.has(key)) itemsById.set(key, item);
+    const data = await itemsResponse.json();
+    const pageItems = data.itemSummaries || [];
+    for (const item of pageItems) {
+      if (shouldPaginate && !seasonalTitlePattern.test(item.title || '')) continue;
+      const key = item.itemId || item.itemWebUrl;
+      if (key && !itemsById.has(key)) itemsById.set(key, item);
+    }
+
+    if (!shouldPaginate || pageItems.length === 0 || pageItems.length < 200 ||
+      (typeof data.total === 'number' && offset + pageItems.length >= data.total)) break;
+    offset += pageItems.length;
   }
 }
 

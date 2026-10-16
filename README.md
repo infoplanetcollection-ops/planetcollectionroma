@@ -39,6 +39,10 @@ Passaggi:
 3. usa il file `CNAME` per mantenere il dominio personalizzato
 4. verifica che il dominio `planetcollectionroma.it` punti correttamente al provider
 
+## Catalogo eBay
+
+Il catalogo viene sincronizzato automaticamente ogni giorno. La sincronizzazione cerca anche tutte le inserzioni attive del negozio con `carnevale` o `halloween` nel titolo, scorrendo le pagine dei risultati e ignorando le corrispondenze che compaiono solo altrove.
+
 ## Contatti principali
 
 - WhatsApp: 392 786 1863
