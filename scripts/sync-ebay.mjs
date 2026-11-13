@@ -23,13 +23,14 @@ if (!tokenResponse.ok) {
 }
 
 const { access_token: accessToken } = await tokenResponse.json();
-const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'vintage', 'vestito', 'travestimento'];
+const queries = ['costume', 'cosplay', 'maschera', 'parrucca', 'trucco', 'halloween', 'carnevale', 'natale', 'vintage', 'vestito', 'travestimento'];
 const seasonalQueries = new Set(['halloween', 'carnevale']);
 const seasonalTitlePattern = /\b(?:carnevale|halloween)\b/i;
+const nataleItemKeys = new Set();
 const itemsById = new Map();
 
 for (const q of queries) {
-  const shouldPaginate = seasonalQueries.has(q);
+  const shouldPaginate = seasonalQueries.has(q) || q === 'natale';
   let offset = 0;
   while (true) {
     if (offset > 10000) {
@@ -59,8 +60,12 @@ for (const q of queries) {
     const data = await itemsResponse.json();
     const pageItems = data.itemSummaries || [];
     for (const item of pageItems) {
-      if (shouldPaginate && !seasonalTitlePattern.test(item.title || '')) continue;
-      const key = item.itemId || item.itemWebUrl;
+      if (seasonalQueries.has(q) && !seasonalTitlePattern.test(item.title || '')) continue;
+      if (q === 'natale') {
+        const nataleKey = itemKeyFromUrl(item.itemWebUrl) || item.itemId || item.itemWebUrl;
+        if (nataleKey) nataleItemKeys.add(nataleKey);
+      }
+      const key = itemKeyFromUrl(item.itemWebUrl) || item.itemId || item.itemWebUrl;
       if (key && !itemsById.has(key)) itemsById.set(key, item);
     }
 
@@ -99,7 +104,8 @@ for (const item of itemsById.values()) {
   };
   if (!product.image || !product.ebayUrl) continue;
 
-  const byTitle = classifyText(item.title);
+  const itemKey = itemKeyFromUrl(item.itemWebUrl) || item.itemId || item.itemWebUrl;
+  const byTitle = nataleItemKeys.has(itemKey) ? 'natale' : classifyText(item.title);
   const byEbayCategory = byTitle ? null : classifyText((item.categories || []).map((category) => category.categoryName).join(' '));
   if (byTitle) {
     product.category = byTitle;
@@ -169,6 +175,7 @@ async function classifyByDescription(item) {
 // a mask ("... CON MASCHERA") stays a costume, not a mask.
 function classifyText(text = '') {
   const value = text.toLowerCase();
+  if (/\bnatale\b/.test(value)) return 'natale';
   if (/parrucca|wig/.test(value)) return 'parrucche';
   if (/trucco|make.?up|fondotinta|rossetto|cipria|mascara|eyeliner|truccabimbi/.test(value)) return 'trucco';
   if (/maschera|mask|veneziana/.test(value) && !/vestito|costume|tuta|abito|travestimento/.test(value)) return 'maschere';

@@ -41,7 +41,7 @@ Passaggi:
 
 ## Catalogo eBay
 
-Il catalogo viene sincronizzato automaticamente ogni giorno. La sincronizzazione cerca anche tutte le inserzioni attive del negozio con `carnevale` o `halloween` nel titolo, scorrendo le pagine dei risultati e ignorando le corrispondenze che compaiono solo altrove.
+Il catalogo viene sincronizzato automaticamente ogni giorno. La sincronizzazione cerca anche tutte le inserzioni attive del negozio con `carnevale` o `halloween` nel titolo e tutti i risultati della ricerca del negozio per `natale`, scorrendo le pagine e classificandoli nella categoria dedicata.
 
 ## Contatti principali
 

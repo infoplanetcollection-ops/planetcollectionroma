@@ -3,6 +3,7 @@ const categories = [
   { key: 'tutti', label: 'Tutto' },
   { key: 'preferiti', label: 'Preferiti' },
   { key: 'halloween', label: 'Carnevale e Halloween 🎃' },
+  { key: 'natale', label: 'Natale' },
   { key: 'costumi', label: 'Costumi' },
   { key: 'maschere', label: 'Maschere' },
   { key: 'parrucche', label: 'Parrucche' },
